@@ -4,7 +4,7 @@ Summary:	CMFForum - a Zope product that Anonymous can post by default
 Summary(pl):	CMFForum - dodatek do Zope daj±cy mo¿liwo¶æ wys³ania e-maila
 Name:		Zope-%{zope_subname}
 Version:	1.0
-Release:	2
+Release:	3
 License:	ZPL 2.0
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/collective/%{zope_subname}-%{version}.tgz
