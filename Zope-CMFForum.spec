@@ -4,7 +4,7 @@ Summary:	A Zope product that Anonymous can post by default
 Summary(pl):	Dodatek do Zope daj±cy mo¿liwo¶æ wys³ania e-maila
 Name:		Zope-%{zope_subname}
 Version:	1.0
-Release:	6
+Release:	7
 License:	ZPL 2.0
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/collective/%{zope_subname}-%{version}.tgz
@@ -38,7 +38,7 @@ wzglêdem bezpieczeñstwa.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/%{name}
 
-cp -af {Extensions,interfaces,skins,*.py,*.gif} $RPM_BUILD_ROOT%{_datadir}/%{name}
+cp -af {Extensions,interfaces,skins,*.py,*.gif,version.txt} $RPM_BUILD_ROOT%{_datadir}/%{name}
 
 %py_comp $RPM_BUILD_ROOT%{_datadir}/%{name}
 %py_ocomp $RPM_BUILD_ROOT%{_datadir}/%{name}
