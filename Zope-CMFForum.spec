@@ -3,7 +3,7 @@ Summary:	A Zope product that Anonymous can post by default
 Summary(pl):	Dodatek do Zope daj±cy mo¿liwo¶æ wys³ania e-maila
 Name:		Zope-%{zope_subname}
 Version:	1.0
-Release:	9
+Release:	10
 License:	ZPL 2.0
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/collective/%{zope_subname}-%{version}.tgz
@@ -11,7 +11,7 @@ Source0:	http://dl.sourceforge.net/collective/%{zope_subname}-%{version}.tgz
 URL:		http://sourceforge.net/projects/collective/
 %pyrequires_eq	python-modules
 Requires:	Zope >= 2.5.1
-Requires:	Zope-CMF >= 1.3
+Requires:	Zope-CMF >= 1:1.4
 Requires(post,postun):	/usr/sbin/installzopeproduct
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
