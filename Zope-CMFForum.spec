@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.python
 %define		zope_subname	CMFForum
 Summary:	A Zope product that Anonymous can post by default
 Summary(pl):	Dodatek do Zope daj±cy mo¿liwo¶æ wys³ania e-maila
