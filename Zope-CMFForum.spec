@@ -12,7 +12,7 @@ Source0:	http://dl.sourceforge.net/collective/%{zope_subname}-%{version}.tgz
 URL:		http://sourceforge.net/projects/collective/
 %pyrequires_eq	python-modules
 Requires:	Zope >= 2.5.1
-Requires:	CMF >= 1.3
+Requires:	Zope-CMF >= 1.3
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
