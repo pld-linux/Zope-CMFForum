@@ -3,8 +3,8 @@
 
 %define		zope_subname	CMFForum
 
-Summary:	CMMForum is a Zope product that Anonymous can post by default.
-Summary(pl):	CMMForum jest dodatkiem do Zope daj±cy mo¿liwo¶æ wys³ania e-maila
+Summary:	CMFForum is a Zope product that Anonymous can post by default.
+Summary(pl):	CMFForum jest dodatkiem do Zope daj±cy mo¿liwo¶æ wys³ania e-maila
 Name:		Zope-%{zope_subname}
 Version:	1.0
 Release:	1
