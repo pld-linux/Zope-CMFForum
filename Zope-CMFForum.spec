@@ -5,14 +5,14 @@ Summary(pl):	CMFForum - dodatek do Zope daj±cy mo¿liwo¶æ wys³ania e-maila
 Name:		Zope-%{zope_subname}
 Version:	1.0
 Release:	2
-License:	GNU
+License:	ZPL 2.0
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/collective/%{zope_subname}-%{version}.tgz
 # Source0-md5:	dc9ee26b8c78a32238afd2540dcf258c
 URL:		http://sourceforge.net/projects/collective/
 %pyrequires_eq	python-modules
-Requires:	Zope
-Requires:	CMF
+Requires:	Zope >= 2.5.1
+Requires:	CMF >= 1.3
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -32,18 +32,17 @@ pobierane s± odpowiednie pola z preferencji. Dodatek sprawdzony pod
 wzglêdem bezpieczeñstwa.
 
 %prep
-%setup -q -c %{zope_subname}-%{version}
+%setup -q -n %{zope_subname}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{product_dir}
+install -d $RPM_BUILD_ROOT%{product_dir}/%{zope_subname}
 
-cp -af * $RPM_BUILD_ROOT%{product_dir}/%{zope_subname}
+cp -af {Extensions,interfaces,skins,*.py,*.gif} $RPM_BUILD_ROOT%{product_dir}/%{zope_subname}
 
 %py_comp $RPM_BUILD_ROOT%{product_dir}/%{zope_subname}
 %py_ocomp $RPM_BUILD_ROOT%{product_dir}/%{zope_subname}
 
-rm -rf $RPM_BUILD_ROOT%{product_dir}/%{zope_subname}/*.txt
 # find $RPM_BUILD_ROOT -type f -name "*.py" -exec rm -rf {} \;;
 
 %clean
@@ -61,5 +60,5 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc %{zope_subname}/*.txt
+%doc CHANGES.txt CREDITS.txt HISTORY.txt INSTALL.txt LICENSE.txt README.txt TODO.txt
 %{product_dir}/%{zope_subname}
