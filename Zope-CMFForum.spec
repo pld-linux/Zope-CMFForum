@@ -64,5 +64,5 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES.txt CREDITS.txt HISTORY.txt INSTALL.txt LICENSE.txt README.txt TODO.txt
+%doc CHANGES.txt CREDITS.txt HISTORY.txt INSTALL.txt README.txt TODO.txt
 %{_datadir}/%{name}
