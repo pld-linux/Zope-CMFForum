@@ -4,7 +4,7 @@ Summary:	CMFForum - a Zope product that Anonymous can post by default
 Summary(pl):	CMFForum - dodatek do Zope daj±cy mo¿liwo¶æ wys³ania e-maila
 Name:		Zope-%{zope_subname}
 Version:	1.0
-Release:	1
+Release:	2
 License:	GNU
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/collective/%{zope_subname}-%{version}.tgz
@@ -44,7 +44,7 @@ cp -af * $RPM_BUILD_ROOT%{product_dir}/%{zope_subname}
 %py_ocomp $RPM_BUILD_ROOT%{product_dir}/%{zope_subname}
 
 rm -rf $RPM_BUILD_ROOT%{product_dir}/%{zope_subname}/*.txt
-find $RPM_BUILD_ROOT -type f -name "*.py" -exec rm -rf {} \;;
+# find $RPM_BUILD_ROOT -type f -name "*.py" -exec rm -rf {} \;;
 
 %clean
 rm -rf $RPM_BUILD_ROOT
