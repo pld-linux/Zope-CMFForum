@@ -1,4 +1,8 @@
+
+%include	/usr/lib/rpm/macros.python
+
 %define		zope_subname	CMFForum
+
 Summary:	CMMForum is a Zope product that Anonymous can post by default.
 Summary(pl):	CMMForum jest dodatkiem do Zope daj±cy mo¿liwo¶æ wys³ania e-maila
 Name:		Zope-%{zope_subname}
@@ -8,21 +12,13 @@ License:	GNU
 Group:		Development/Tools
 Source0:	http://telia.dl.sourceforge.net/sourceforge/collective/%{zope_subname}-%{version}.tgz
 # Source0-md5:	dc9ee26b8c78a32238afd2540dcf258c
-
 URL:		http://sourceforge.net/projects/collective
-Requires:	python >= 2.2
-Requires:	python-modules >= 2.2
-Requires:	python-libs >= 2.2
+%pyrequires_eq	python-modules
 Requires:	Zope
 Requires:	CMF
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-# define	python_prefix           %(echo `python -c "import sys; print sys.prefix"`)
-# define        python_version          %(echo `python -c "import sys; print sys.version[:3]"`)
-# define        python_libdir           %{python_prefix}/lib/python%{python_version}
-# define        python_sitedir          %{python_libdir}/site-packages
-
-%define		zope_lib	/usr/lib/zope/Addons
 %define 	product_dir	/usr/lib/zope/Products
 
 %description
@@ -45,11 +41,15 @@ wzglêdem bezpieczeñstwa.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{zope_lib}
+
 install -d $RPM_BUILD_ROOT%{product_dir}
-cp -af * $RPM_BUILD_ROOT%{zope_lib}/%{zope_subname}
-rm -rf $RPM_BUILD_ROOT%{zope_lib}/%{zope_subname}/*.txt
-ln -s %{zope_lib}/%{zope_subname}/ $RPM_BUILD_ROOT%{product_dir}
+cp -af * $RPM_BUILD_ROOT%{product_dir}/%{zope_subname}
+
+%py_comp $RPM_BUILD_ROOT%{product_dir}/%{zope_subname}
+%py_ocomp $RPM_BUILD_ROOT%{product_dir}/%{zope_subname}
+
+rm -rf $RPM_BUILD_ROOT%{product_dir}/%{zope_subname}/*.txt
+find $RPM_BUILD_ROOT -type f -name "*.py" -exec rm -rf {} \;;
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -69,5 +69,4 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc %{zope_subname}/*.txt
-%{zope_lib}
-%{product_dir}
+%{product_dir}/%{zope_subname}
