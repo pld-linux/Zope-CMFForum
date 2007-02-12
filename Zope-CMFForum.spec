@@ -1,6 +1,6 @@
 %define		zope_subname	CMFForum
 Summary:	A Zope product that Anonymous can post by default
-Summary(pl.UTF-8):   Dodatek do Zope dający możliwość wysłania e-maila
+Summary(pl.UTF-8):	Dodatek do Zope dający możliwość wysłania e-maila
 Name:		Zope-%{zope_subname}
 Version:	1.0
 Release:	10
