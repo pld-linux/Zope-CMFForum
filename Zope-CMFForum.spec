@@ -1,6 +1,6 @@
 %define		zope_subname	CMFForum
 Summary:	A Zope product that Anonymous can post by default
-Summary(pl):	Dodatek do Zope daj±cy mo¿liwo¶æ wys³ania e-maila
+Summary(pl.UTF-8):   Dodatek do Zope dajÄ…cy moÅ¼liwoÅ›Ä‡ wysÅ‚ania e-maila
 Name:		Zope-%{zope_subname}
 Version:	1.0
 Release:	10
@@ -25,12 +25,12 @@ add Attachments - Anonymous can set Author and e-mail fields. Logged
 in user gets 'username' as Author and email from preferences. Security
 cleanup.
 
-%description -l pl
-CMMForum jest dodatkiem do Zope umo¿liwiaj±cym dodanie formy wysy³ania
-e-mailem bez mo¿liwo¶ci wysy³ania za³±czników. Anonymous mo¿e ustawiæ
-adres e-mail, a je¿eli zaloguje siê jako konkretny u¿ytkownik, wtedy
-pobierane s± odpowiednie pola z preferencji. Dodatek sprawdzony pod
-wzglêdem bezpieczeñstwa.
+%description -l pl.UTF-8
+CMMForum jest dodatkiem do Zope umoÅ¼liwiajÄ…cym dodanie formy wysyÅ‚ania
+e-mailem bez moÅ¼liwoÅ›ci wysyÅ‚ania zaÅ‚Ä…cznikÃ³w. Anonymous moÅ¼e ustawiÄ‡
+adres e-mail, a jeÅ¼eli zaloguje siÄ™ jako konkretny uÅ¼ytkownik, wtedy
+pobierane sÄ… odpowiednie pola z preferencji. Dodatek sprawdzony pod
+wzglÄ™dem bezpieczeÅ„stwa.
 
 %prep
 %setup -q -n %{zope_subname}
